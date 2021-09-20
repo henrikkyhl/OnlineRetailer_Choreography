@@ -3,9 +3,9 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>{EC2AB2DC-2FB1-4320-A9D1-E13278CF584B}</ProjectGuid>
+    <ProjectGuid>{4D1A7D3F-779E-4225-844A-5D96B6F3FBC2}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/weatherforecast</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/products</DockerServiceUrl>
     <DockerServiceName>productapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
