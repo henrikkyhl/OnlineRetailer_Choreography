@@ -13,15 +13,12 @@ namespace OrderApi.Controllers
     public class OrdersController : ControllerBase
     {
         IOrderRepository repository;
-        IServiceGateway<ProductDto> productServiceGateway;
         IMessagePublisher messagePublisher;
 
         public OrdersController(IRepository<Order> repos,
-            IServiceGateway<ProductDto> gateway,
             IMessagePublisher publisher)
         {
             repository = repos as IOrderRepository;
-            productServiceGateway = gateway;
             messagePublisher = publisher;
         }
 

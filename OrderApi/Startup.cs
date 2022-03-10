@@ -14,16 +14,10 @@ namespace OrderApi
 {
     public class Startup
     {
-        // Base URL for the product service when the solution is executed using docker-compose.
-        // The product service (running as a container) listens on this URL for HTTP requests
-        // from other services specified in the docker compose file (which in this solution is
-        // the order service).
-        Uri productServiceBaseUrl = new Uri("http://productapi/products/");
-
         // RabbitMQ connection string (I use CloudAMQP as a RabbitMQ server).
         // Remember to replace this connectionstring with youur own.
         string cloudAMQPConnectionString =
-           "host=hare.rmq.cloudamqp.com;virtualHost=npaprqop;username=npaprqop;password=doNRgDuVmrCoH6eidM1nILQbMc_r1eEZ";
+           "host=hare.rmq.cloudamqp.com;virtualHost=npaprqop;username=npaprqop;password=type_password_here";
 
         public Startup(IConfiguration configuration)
         {
@@ -43,10 +37,6 @@ namespace OrderApi
 
             // Register database initializer for dependency injection
             services.AddTransient<IDbInitializer, DbInitializer>();
-
-            // Register product service gateway for dependency injection
-            services.AddSingleton<IServiceGateway<ProductDto>>(new
-                ProductServiceGateway(productServiceBaseUrl));
 
             // Register MessagePublisher (a messaging gateway) for dependency injection
             services.AddSingleton<IMessagePublisher>(new
