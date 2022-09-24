@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>{4D1A7D3F-779E-4225-844A-5D96B6F3FBC2}</ProjectGuid>
+    <ProjectGuid>{B9142733-7271-415B-9856-7CBE7957E785}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/products</DockerServiceUrl>
     <DockerServiceName>productapi</DockerServiceName>

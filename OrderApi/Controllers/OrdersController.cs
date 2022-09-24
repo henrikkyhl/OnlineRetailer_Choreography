@@ -60,6 +60,7 @@ namespace OrderApi.Controllers
                 messagePublisher.PublishOrderCreatedMessage(
                     newOrder.customerId, newOrder.Id, newOrder.OrderLines);
 
+
                 // Wait until order status is "completed"
                 bool completed = false;
                 while (!completed)
