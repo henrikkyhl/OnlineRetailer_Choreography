@@ -34,7 +34,7 @@ namespace OrderApi.Data
         public Order Get(int id)
         {
             var order =  db.Orders.Include(o => o.OrderLines).FirstOrDefault(o => o.Id == id);
-            // Reload the order from the database instead of usinga cached copy
+            // Reload the order from the database instead of using a cached copy
             db.Entry<Order>(order).Reload();
             return order;
         }
