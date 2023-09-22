@@ -60,17 +60,8 @@ namespace OrderApi.Controllers
                 messagePublisher.PublishOrderCreatedMessage(
                     newOrder.customerId, newOrder.Id, newOrder.OrderLines);
 
-
-                // Wait until order status is "completed"
-                bool completed = false;
-                while (!completed)
-                {
-                    var tentativeOrder = repository.Get(newOrder.Id);
-                    if (tentativeOrder.Status == Order.OrderStatus.completed)
-                        completed = true;
-                    Thread.Sleep(100);
-                }
-
+                // Return a non-binding order confirmation immediately.
+                // (an email will be sent when the order status becomes complete)
                 return CreatedAtRoute("GetOrder", new { id = newOrder.Id }, newOrder);
             }
             catch

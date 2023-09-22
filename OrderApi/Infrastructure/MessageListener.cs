@@ -52,6 +52,9 @@ namespace OrderApi.Infrastructure
                 var order = orderRepos.Get(message.OrderId);
                 order.Status = Order.OrderStatus.completed;
                 orderRepos.Edit(order);
+
+                // Email a binding order confirmation
+                // (this part has not been implemented)
             }
         }
 
